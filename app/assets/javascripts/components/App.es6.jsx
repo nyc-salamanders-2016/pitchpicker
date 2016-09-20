@@ -1,4 +1,20 @@
 class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {title: null, description: null}
+    this.handleCreate = this.handleCreate.bind(this)
+  }
+
+
+  handleCreate(title, description){
+    var content = {title: title, description: description}
+    $.ajax({
+			url: "/projects",
+			method: "POST",
+      data: content
+		})
+  }
+
   render() {
     return (
       <div className="App">
@@ -20,8 +36,10 @@ class App extends React.Component {
           pitch time
           </p>
 
-        </div>
-        <Student />
+
+          <StudentPitch onCreate={this.handleCreate} />
+          <Vote />
+
       </div>
     );
   }
