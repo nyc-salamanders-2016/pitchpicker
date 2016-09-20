@@ -1,25 +1,32 @@
-const { Navbar, Nav, NavItem } = require('react-bootstrap')
-
 class NavbarInstance extends React.Component {
   render() {
     return (
-      <Navbar inverse>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#">React-Bootstrap</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="#">About</NavItem>
-          </Nav>
-          <Nav pullRight>
-            <NavItem eventKey={2} href="#">Sign up</NavItem>
-            <NavItem eventKey={3} href="#">Register</NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+            <a className="navbar-brand" href="#">PitchPicker</a>
+          </div>
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul className="nav navbar-nav">
+              <li className="active"><a href="/">Home <span className="sr-only">(current)</span></a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+            <ul className="nav navbar-nav navbar-right">
+              <li><a href="#">Login or Welcome [USER]</a></li>
+              <li><a href="#">Sign Up if logged out</a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
     );
   }
 }
