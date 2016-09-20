@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-    if current_user
-    user = current_user.to_json
-    render json: user
-    end
+    # if current_user
+    # user = current_user.to_json
+    # render json: user
+    # end
   end
 
   def new
