@@ -36,9 +36,10 @@ class App extends React.Component {
           pitch time
           </p>
 
-
-          <StudentPitch onCreate={this.handleCreate} />
-          <Vote />
+          <div>
+            {user.admin ? {<Admin />} : {<StudentPitch onCreate={this.handleCreate} />}  }
+          </div>
+          </div>
 
       </div>
     );
