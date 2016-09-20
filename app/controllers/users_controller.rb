@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-    
+    if current_user
+    user = current_user.to_json
+    render json: user
+    end
   end
 
   def new
@@ -9,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id

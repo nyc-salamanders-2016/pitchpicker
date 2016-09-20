@@ -1,6 +1,7 @@
 class App extends React.Component {
   constructor(){
     super()
+    debugger;
     this.state = {title: null, description: null}
     this.handleCreate = this.handleCreate.bind(this)
   }
@@ -37,7 +38,10 @@ class App extends React.Component {
           </p>
 
           <div>
-            {user.admin ? {<Admin />} : {<StudentPitch onCreate={this.handleCreate} />}  }
+          <StudentPitch onCreate={this.handleCreate} />
+            {/* {user.admin ? {<Admin />} : {<StudentPitch onCreate={this.handleCreate} />}  } */}
+            <StudentVoting />
+
           </div>
           </div>
 
