@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    if current_user.admin
+    if current_user && current_user.admin
       #render Admin view set up amount of pitches allowed
-    else
-      #render User view welcome, where to pitch
     end
   end
 
@@ -12,7 +10,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-   def create
+  def create
+    binding.pry
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -21,7 +20,6 @@ class UsersController < ApplicationController
       render "new"
     end
   end
-
 
   private
   def user_params
