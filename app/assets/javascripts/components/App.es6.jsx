@@ -30,8 +30,13 @@ class App extends React.Component {
           <div>
           <Student />
             {/* {user.admin ? {<Admin />} : {<StudentPitch onCreate={this.handleCreate} />}  } */}
+          </div>
 
           </div>
+
+          <div>
+          <AdminConfig / >
+
           </div>
 
       </div>
