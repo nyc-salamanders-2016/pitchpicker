@@ -27,8 +27,6 @@ class App extends React.Component {
             <Student />
           </div>
 
-          <AdminConfig />
-
         </div>
 
       </div>

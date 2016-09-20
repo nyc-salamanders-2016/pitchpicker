@@ -1,13 +1,15 @@
 class ProjectsController < ApplicationController
 
+  def index
+    @projects = Project.all.to_json
+    render json: @projects
+  end
+
   def create
 
     @project = Project.new(title: params[:title], description: params[:description], user_id: current_user.id)
     @project.save
-    projects = Project.all
-
-    projects.to_json
-    render json: projects
+    render json: @project
   end
 
   private

@@ -5,8 +5,14 @@ class StudentPitch extends React.Component {
   }
 
   handleSubmit(event){
-    event.preventDefault();
+    // event.preventDefault();
     this.props.onCreate(this.refs.title.value, this.refs.description.value);
+
+    // var titleValue = this.refs.title.value
+    // debugger
+    // if (titleValue) {
+    //   console.log(titleValue)
+    //   this.titleValue("")
     // this.props.onCreate(this.refs.description.value);
   }
 

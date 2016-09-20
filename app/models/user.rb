@@ -24,19 +24,15 @@ class User < ApplicationRecord
   end
 
 
-
-  def max_pitches=(number)
-    max_pitches = number
-  end
-
   def max_pitches
-    max_pitches
+    (students.length / 2.5).floor
   end
 
   def max_pitches_error
     if self.projects.length > max_pitches
       errors.add(:pitches_count, "can't have more than #{max_pitches} pitches")
     end
+
   end
 
   def max_votes
