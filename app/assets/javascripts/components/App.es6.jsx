@@ -1,4 +1,11 @@
 class App extends React.Component {
+  constructor(){
+    super()
+    debugger;
+    this.state = {}
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -20,8 +27,13 @@ class App extends React.Component {
           pitch time
           </p>
 
-        </div>
-        <Student />
+          <div>
+          <Student />
+            {/* {user.admin ? {<Admin />} : {<StudentPitch onCreate={this.handleCreate} />}  } */}
+
+          </div>
+          </div>
+
       </div>
     );
   }
