@@ -8,16 +8,8 @@ class VotesController < ApplicationController
   end
 
   def create
-    if current_user.votes.size < contraint
-    @vote = Vote.new(vote_params)
-    if @vote.save
 
-    else
-
-    end
-      else
-
-    end
+  end
 
   private
   def vote_params
