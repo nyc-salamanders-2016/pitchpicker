@@ -3,9 +3,8 @@ class ProjectsController < ApplicationController
   def create
     #set limitation for projects
     @project = Project.new(title: params[:title], description: params[:description])
-    if @project.save
-    else
-    end
+    @project.save
+
   end
 
   private

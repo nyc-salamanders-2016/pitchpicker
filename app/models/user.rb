@@ -4,4 +4,6 @@ class User < ApplicationRecord
   has_many :votes
   has_many :rankings
   #belongs_to assigned_project
+
+  def 
 end

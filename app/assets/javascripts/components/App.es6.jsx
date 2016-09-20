@@ -2,18 +2,8 @@ class App extends React.Component {
   constructor(){
     super()
     debugger;
-    this.state = {title: null, description: null}
-    this.handleCreate = this.handleCreate.bind(this)
-  }
+    this.state = {}
 
-
-  handleCreate(title, description){
-    var content = {title: title, description: description}
-    $.ajax({
-			url: "/projects",
-			method: "POST",
-      data: content
-		})
   }
 
   render() {
@@ -38,9 +28,8 @@ class App extends React.Component {
           </p>
 
           <div>
-          <StudentPitch onCreate={this.handleCreate} />
+          <Student />
             {/* {user.admin ? {<Admin />} : {<StudentPitch onCreate={this.handleCreate} />}  } */}
-            <StudentVoting />
 
           </div>
           </div>
