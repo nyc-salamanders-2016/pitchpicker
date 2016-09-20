@@ -7,7 +7,6 @@ class LogInForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // debugger
     const userUsername = this.refs.username.value
     const userPassword = this.refs.password.value
     $.ajax({

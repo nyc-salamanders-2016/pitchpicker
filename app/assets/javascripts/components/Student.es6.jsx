@@ -1,8 +1,7 @@
 class Student extends React.Component{
   constructor(){
     super()
-    debugger;
-    this.state = {title: null, description: null, user: null}
+    this.state = {title: null, description: null, user: null, projects: null}
     this.handleCreate = this.handleCreate.bind(this)
   }
 
@@ -13,6 +12,10 @@ class Student extends React.Component{
       method: "POST",
       data: content
     })
+    .done((response) =>{
+      this.setState({projects: response})
+    }.bind(this))
+
   }
 
 
@@ -23,17 +26,21 @@ class Student extends React.Component{
         <div>
           {/* <h2>Admit is setting up</h2> */}
           <StudentPitch onCreate={this.handleCreate} />
-{/*
-        // when it's time to pitch
-        //   <StudentPitch />
-        // when it's round 1 voting time
+          <StudentVoting projects={}/>
+          {/*
+          when it's time to pitch
           <StudentPitch />
-          {/* <StudentVoting /> */}
-        {/* // when it's round 2 voting time
-        {/* //   <StudentRanking /> */}
-        {/* //   drop down menus */}
-        {/* // once admit has set teams */} */}
-        {/* //   <ProjectTeams /> */} */}
+          when it's round 1 voting time
+          <StudentPitch />
+          {/* <StudentVoting />
+          */}
+
+          {/* when it's round 2 voting time */}
+          {/*  <StudentRanking /> */}
+          {/* //   drop down menus */}
+          {/* // once admit has set teams */}
+          {/* //   <ProjectTeams /> */}
+
         </div>
     )
   }

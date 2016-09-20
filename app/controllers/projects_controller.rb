@@ -1,10 +1,13 @@
 class ProjectsController < ApplicationController
 
   def create
-    #set limitation for projects
-    @project = Project.new(title: params[:title], description: params[:description])
-    @project.save
 
+    @project = Project.new(title: params[:title], description: params[:description], user_id: current_user.id)
+    @project.save
+    projects = Project.all
+
+    projects.to_json
+    render json: projects
   end
 
   private

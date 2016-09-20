@@ -7,7 +7,7 @@ class StudentPitch extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     this.props.onCreate(this.refs.title.value, this.refs.description.value);
-    //this.props.onCreate(this.refs.description.value);
+    // this.props.onCreate(this.refs.description.value);
   }
 
 

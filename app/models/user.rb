@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :rankings
   #belongs_to assigned_project
 
-  validate :max_votes_error
+  validate :max_votes_error, :max_pitches_error
 
   def admin?
     self.admin
@@ -23,6 +23,8 @@ class User < ApplicationRecord
     end
   end
 
+
+
   def max_pitches=(number)
     max_pitches = number
   end
@@ -31,12 +33,18 @@ class User < ApplicationRecord
     max_pitches
   end
 
+  def max_pitches_error
+    if self.projects.length > max_pitches
+      errors.add(:pitches_count, "can't have more than #{max_pitches} pitches")
+    end
+  end
+
   def max_votes
     (students.length / 2).floor
   end
 
   def max_votes_error
-    if self.user.votes.length > max_votes
+    if self.votes.length > max_votes
       errors.add(:vote_count, "can't have more than #{max_votes} votes")
     end
   end

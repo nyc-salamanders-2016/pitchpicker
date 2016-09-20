@@ -1,9 +1,7 @@
 class App extends React.Component {
   constructor(){
     super()
-    debugger;
     this.state = {}
-
   }
 
   render() {
@@ -13,8 +11,6 @@ class App extends React.Component {
         <header>
           <NavbarInstance />
         </header>
-
-        <LogInForm />
 
         <div className="jumbotron">
           <h2>Welcome to PitchPicker</h2>
@@ -28,16 +24,12 @@ class App extends React.Component {
           </p>
 
           <div>
-          <Student />
-            {/* {user.admin ? {<Admin />} : {<StudentPitch onCreate={this.handleCreate} />}  } */}
+            <Student />
           </div>
 
-          </div>
+          <AdminConfig />
 
-          <div>
-          <AdminConfig / >
-
-          </div>
+        </div>
 
       </div>
     );
