@@ -26,7 +26,7 @@ class Student extends React.Component{
         <div>
           {/* <h2>Admit is setting up</h2> */}
           <StudentPitch onCreate={this.handleCreate} />
-          <StudentVoting projects={}/>
+          <StudentVoting />
           {/*
           when it's time to pitch
           <StudentPitch />
