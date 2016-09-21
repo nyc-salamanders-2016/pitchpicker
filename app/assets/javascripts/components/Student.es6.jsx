@@ -1,7 +1,8 @@
 class Student extends React.Component{
   constructor(){
     super()
-    this.state = {title: null, description: null, user: null, projects: [], toggleDetails: false}
+
+    this.state = {title: null, description: null, user: null, projects: [], toggleDetails: false, votes: 0}
     this.handleCreate = this.handleCreate.bind(this)
     this.onCreate = this.onCreate.bind(this)
 
@@ -21,7 +22,6 @@ class Student extends React.Component{
 
 
   onCreate(pitch){
-    debugger
     this.setState({
       projects: [pitch].concat(this.state.projects)
     })
@@ -48,13 +48,15 @@ class Student extends React.Component{
           {/* <h2>Admit is setting up</h2> */}
           <StudentPitch onCreate={this.handleCreate} />
 
+          <h2>{this.props.user.votes.length}</h2>
           <h4 id ="currentPitches" ref= "currentPitches"> Current Pitches: </h4>
           {
             this.state.projects.map( (project, idx ) => {
-              return ( <Project key={idx} data={project} />) })
+              return ( <Project key={idx} data={project} votes={this.state.votes} />) })
                 // <p onClick={this.toggleDetails} key={idx}> {project.title} </p>) })
           }
-          
+
+
           <StudentVoting />
           {/*
           when it's time to pitch
