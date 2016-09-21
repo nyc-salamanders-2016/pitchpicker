@@ -55,8 +55,9 @@ class Student extends React.Component{
         <div>
           {/* <h2>Admit is setting up</h2> */}
           <StudentPitch onCreate={this.handleCreate} />
-
-          <h2>Vote total: {this.state.votes}</h2>
+          <br/>
+          <h2>Vote!</h2>
+          <h3>Number of votes left:{this.props.maxVotes - this.props.user.votes.length}</h3>
           <h4 id ="currentPitches" ref= "currentPitches"> Current Pitches: </h4>
           {
             this.state.projects.map( (project, idx ) => {

@@ -39,7 +39,6 @@ class StudentVoting extends React.Component {
   					})
   				}
   			</ul> */}
-        <h2>HI!!</h2>
         </div>
     );
   }
