@@ -1,10 +1,6 @@
 class VotesController < ApplicationController
   def index
-    if current_user.admin
-      #render Admin view: see results of first round
-    else
-      #render User view: where to vote
-    end
+
   end
 
   def create

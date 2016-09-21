@@ -28,7 +28,7 @@ class Project extends React.Component {
   if(toggleDetails) {
     return (
       <div>
-    <h4>Description:</h4>
+    <h5>Description:</h5>
     <p>{details}</p>
     </div>
   )
@@ -39,7 +39,7 @@ class Project extends React.Component {
 
 handleVote(){
   this.props.votes = this.props.votes + 1
- this.props.onIncrement(this.props.votes)
+  this.props.onIncrement(this.props.votes)
 }
 
 handleSubmit(event){
@@ -63,12 +63,14 @@ handleSubmit(event){
       <div>
 
         <section>
-          <h3 onClick={this.toggleDetails} >
+          <h4 onClick={this.toggleDetails} >
 
             {project.title}
+          </h4>
+          <p>
             {this.showDetails()}
+          </p>
 
-          </h3>
            <form ref="newVote" onSubmit={this.handleSubmit}>
            <input type="submit" value="Vote"/>
            </form>

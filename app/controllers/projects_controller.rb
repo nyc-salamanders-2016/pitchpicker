@@ -12,6 +12,10 @@ class ProjectsController < ApplicationController
     render json: @project
   end
 
+  def sorted
+    @sorted_projects = Project.all.sort_by { |project| project.votes.length }.to_json
+  end
+
   private
 
   def project_params

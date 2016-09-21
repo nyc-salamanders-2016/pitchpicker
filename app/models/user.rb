@@ -36,7 +36,7 @@ class User < ApplicationRecord
   end
 
   def max_votes
-    (students.length / 2).floor
+    (students.length).floor
   end
 
   def max_votes_error
