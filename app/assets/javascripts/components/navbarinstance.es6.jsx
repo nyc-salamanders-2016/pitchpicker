@@ -25,7 +25,7 @@ class NavbarInstance extends React.Component {
               <li><a href="#">About</a></li>
             </ul>
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="#"> Welcome {this.props.data.email}</a></li>
+              <li><a href="#"> Welcome {this.props.userObj.email}</a></li>
               <li><a href="/logout">Log out</a></li>
               <li><a href="#"></a></li>
             </ul>
