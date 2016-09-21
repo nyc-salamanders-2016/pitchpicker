@@ -23,7 +23,13 @@ class Project extends React.Component {
   let { toggleDetails, details } = this.state;
 
   if(toggleDetails) {
-    return <p>{details}</p>
+    return (
+      <div>
+    <h4>Description:</h4>
+    <p>{details}</p>
+    </div>
+  )
+
   }
   return null;
 }
@@ -32,10 +38,10 @@ class Project extends React.Component {
 
       let project = this.props.data
       return(
-        <li onClick={this.toggleDetails} >
+        <h3 onClick={this.toggleDetails} >
           {project.title}
           {this.showDetails()}
-        </li>
+        </h3>
         )
   }
 }
