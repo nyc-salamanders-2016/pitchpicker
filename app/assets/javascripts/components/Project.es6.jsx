@@ -6,7 +6,9 @@ class Project extends React.Component {
     this.fetchDetails = this.fetchDetails.bind(this)
     this.showDetails = this.showDetails.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+
   }
+
 
   toggleDetails(){
     let shouldToggleDetails = !this.state.toggleDetails;
@@ -49,8 +51,7 @@ handleSubmit(event){
     method: "POST",
     data: { selected_project }
   }).done((response)=>{
-    debugger
-    onSubmit(response)
+    this.props.updateVote(response)
   })
 }
 
