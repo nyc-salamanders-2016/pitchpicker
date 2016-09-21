@@ -1,9 +1,10 @@
 class Student extends React.Component{
   constructor(){
     super()
-    this.state = {title: null, description: null, user: null, projects: []}
+    this.state = {title: null, description: null, user: null, projects: [], toggleDetails: false}
     this.handleCreate = this.handleCreate.bind(this)
     this.onCreate = this.onCreate.bind(this)
+
   }
 
   componentDidMount(){
@@ -17,6 +18,7 @@ class Student extends React.Component{
       })
     })
   }
+
 
   onCreate(pitch){
     debugger
@@ -49,10 +51,10 @@ class Student extends React.Component{
           <h4 id ="currentPitches" ref= "currentPitches"> Current Pitches: </h4>
           {
             this.state.projects.map( (project, idx ) => {
-              return (
-                <p key={idx}> {project.title} </p>) })
+              return ( <Project key={idx} data={project} />) })
+                // <p onClick={this.toggleDetails} key={idx}> {project.title} </p>) })
           }
-
+          
           <StudentVoting />
           {/*
           when it's time to pitch

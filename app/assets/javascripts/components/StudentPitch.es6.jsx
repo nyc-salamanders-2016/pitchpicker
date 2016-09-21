@@ -1,7 +1,7 @@
 class StudentPitch extends React.Component {
   constructor(){
     super()
-    this.handleSubmit = this.handleSubmit.bind(this)
+  this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(event){
@@ -17,6 +17,8 @@ class StudentPitch extends React.Component {
   }
 
 
+
+
   render() {
     return (
       <div className="App">
@@ -26,7 +28,6 @@ class StudentPitch extends React.Component {
             <input ref="description" type="text" placeholder="Description"/>
             <button type="submit">Submit</button>
           </form>
-
 
           {/* <h2 className="step">Student make pitches MATT and MOIN </h2>
           <h3>Student Form</h3>
