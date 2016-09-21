@@ -8,7 +8,8 @@ class VotesController < ApplicationController
   end
 
   def create
-
+    @vote = Vote.create(user_id: current_user.id, project_id: params[:selected_project][:id])
+    debugger
   end
 
   private
