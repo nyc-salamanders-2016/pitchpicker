@@ -38,7 +38,7 @@ class App extends React.Component {
         </div>
 
         <div>
-          <Student />
+          <Student user={this.userObj}/>
         </div>
         {afterVoting}
       </div>
