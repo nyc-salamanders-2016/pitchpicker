@@ -1,10 +1,11 @@
 class Student extends React.Component{
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
-    this.state = {title: null, description: null, user: null, projects: [], toggleDetails: false, votes: 0}
+    this.state = {title: null, description: null, user: null, projects: [], toggleDetails: false, votes: this.props.user.votes.length}
     this.handleCreate = this.handleCreate.bind(this)
     this.onCreate = this.onCreate.bind(this)
+    this.handleUpdateVote = this.handleUpdateVote.bind(this)
 
   }
 
@@ -18,6 +19,8 @@ class Student extends React.Component{
         projects: response
       })
     })
+
+
   }
 
 
@@ -39,6 +42,11 @@ class Student extends React.Component{
 
   }
 
+  handleUpdateVote(){
+
+    this.setState({votes: this.props.user.votes.length ++})
+  }
+
 
   render(){
     return(
@@ -48,11 +56,11 @@ class Student extends React.Component{
           {/* <h2>Admit is setting up</h2> */}
           <StudentPitch onCreate={this.handleCreate} />
 
-          <h2>{this.props.user.votes.length}</h2>
+          <h2>Vote total: {this.state.votes}</h2>
           <h4 id ="currentPitches" ref= "currentPitches"> Current Pitches: </h4>
           {
             this.state.projects.map( (project, idx ) => {
-              return ( <Project key={idx} data={project} votes={this.state.votes} />) })
+              return ( <Project key={idx} data={project} votes={this.state.votes} updateVote={this.handleUpdateVote} />) })
                 // <p onClick={this.toggleDetails} key={idx}> {project.title} </p>) })
           }
 
