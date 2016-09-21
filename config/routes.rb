@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   resources :votes, only: [:index, :new, :create]
   resources :rankings, only: [:index, :new, :create]
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  # get '/login' => 'sessions#new'
+  # post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
 end

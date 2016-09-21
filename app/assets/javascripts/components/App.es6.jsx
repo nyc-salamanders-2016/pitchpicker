@@ -1,7 +1,9 @@
 class App extends React.Component {
   constructor(){
     super()
+    this.userObj = JSON.parse($('div').data().reactProps.user)
     this.state = {}
+
   }
 
   render() {
@@ -9,12 +11,12 @@ class App extends React.Component {
       <div className="App">
 
         <header>
-          <NavbarInstance />
+          <NavbarInstance data={this.userObj} />
         </header>
 
         <div className="jumbotron">
           <h2>Welcome to PitchPicker</h2>
-          <p>FINALLY: the DBC final project picking process joins the 21st century</p>
+          <p>The DBC final project picking process joins the 21st century</p>
 
           <p>FORM:
           how many pitches per student
@@ -22,11 +24,10 @@ class App extends React.Component {
           how many preferential votes
           pitch time
           </p>
+        </div>
 
-          <div>
-            <Student />
-          </div>
-
+        <div>
+          <Student />
         </div>
 
       </div>
